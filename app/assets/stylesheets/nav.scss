@@ -6,10 +6,13 @@ header {
       justify-content: center;
       li {
         margin-top: 8px;
-        padding: 16px;
         font-size: 1.0rem;
+        padding: 16px;
       }
-      li:hover a {
+      a{
+        padding: 16px;
+      }
+      a:hover {
         text-shadow: 0 0 20px rgba(255, 255, 0, 1);
         color: #BF7900;
       }
