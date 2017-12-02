@@ -1,0 +1,44 @@
+.login-wrapper{
+  margin-top: calc(50vh - 100px);
+  margin-bottom: calc(50vh - 70px);
+  text-align: center;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 32px;
+  }
+  .button-container .button {
+    position: relative;
+    display: block;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 80px;
+    padding-left: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    border: none;
+    overflow: hidden;
+    background-color: #5AABF3;
+  }
+
+  a {
+  margin: 0 auto;
+  padding: 0;
+  font-size: 2.5rem;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  }
+  .button-container .button:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background-size: 100%;
+    background-image: image-url("twitter_logo.png");
+  }
+}

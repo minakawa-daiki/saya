@@ -1,1 +1,16 @@
-<%= link_to "Twitterでログイン", '/auth/twitter' %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IIDX スコアマネージャ(Saya)</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<div class="wrapper">
+  <div class="login-wrapper">
+    <h1>beatmania IIDX スコアマネージャ(Saya)</h1>
+    <p class="button-container"><%= link_to 'Twitterでログイン', '/auth/twitter' , class: :button %></p>
+  </div>
+</div>
+</body>
+</html>
