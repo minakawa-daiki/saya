@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-
+  before_action :authenticate, except: :login
   def index
     data1 = PlayData.find_by_user(1)
     data2 = PlayData.find_by_user(2)
