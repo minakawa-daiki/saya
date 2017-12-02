@@ -1,7 +1,7 @@
 class PlayData
   def self.upload(file, user_id)
     FileUtils.mkdir_p("user_data/#{user_id}")
-    open("user_data/#{user_id}/#{file.original_filename}", 'wb') do |output|
+    open("user_data/#{user_id}/#{Date.today}_#{file.original_filename}", 'wb') do |output|
       open(file.path) do |data|
         output.write(data.read)
       end
@@ -11,11 +11,11 @@ class PlayData
   def self.find_by_user(id)
     data = []
     if id == 1
-      CSV.foreach("user_data/1244-0940_sp_score.csv", headers: true, quote_char: "\x00") do |row|
+      CSV.foreach("user_data/1/1244-0940_sp_score.csv", headers: true, quote_char: "\x00") do |row|
         data.append(row.to_hash)
       end
     else
-      CSV.foreach("user_data/1244-0940_sp_score_2.csv", headers: true, quote_char: "\x00") do |row|
+      CSV.foreach("user_data/1/1244-0940_sp_score_2.csv", headers: true, quote_char: "\x00") do |row|
         data.append(row.to_hash)
       end
     end

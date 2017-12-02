@@ -33,18 +33,5 @@
   <% end %>
 </div>
 <p class="comment">※ここに表示されるのは直近２つのCSVを比較したデータです。</p>
-<div class="csv-upload-wrapper">
-  <h2>CSVファイルをアップロードする</h2>
-  <%= form_tag upload_path, multipart: true do %>
-      <%= file_field_tag :file , class: :file_select, accept:'.csv' %>
-      <button class="file_select_btn" type="button">ファイルを選択</button>
-      <span class="icon">未選択</span>
-      <span class="filename"></span>
-      <%= hidden_field_tag :referrer, 'top' %>
-      <%= submit_tag 'アップロード', class: :submit %>
-  <% end %>
-  <% flash.each do |_, msg| %>
-      <p class="msg"><%=msg%></p>
-  <% end %>
-</div>
+<%= render partial: 'component/csv_update' ,locals: { referrer: 'top' }%>
 

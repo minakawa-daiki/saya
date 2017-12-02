@@ -1,0 +1,14 @@
+<div class="panel-wrapper">
+  <h1>CSV管理</h1>
+  <%= render partial: 'component/csv_update' ,locals: { referrer: 'manage' }%>
+  <div class="csv-list-wrapper">
+    <h2>CSVファイル一覧(SP)　※1日に1ファイルまで</h2>
+    <% @file_names.each do |name| %>
+      <%= form_tag delete_path do %>
+          <span class="name"><%=name %></span>
+          <%= hidden_field_tag :file, name %>
+          <%= submit_tag '削除', class: :delete %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
