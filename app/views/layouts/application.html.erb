@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Saya</title>
+    <title>IIDX スコアマネージャ(Saya)</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li><a>トップ</a></li>
+            <li><a>最新スコア表示</a></li>
+            <li><a>スコア比較</a></li>
+            <li><a>CSV管理</a></li>
+            <li>Coming Soon</li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,50 @@
+.recent_update{
+  border: solid 1px #fff;
+  margin-top: 16px;
+  border-radius: 16px;
+  padding: 8px 16px;
+  h2{
+    font-size: 1.5rem;
+    margin: 16px 0;
+  }
+  h3{
+    font-size: 1.3rem;
+  }
+  .level-wrap{
+    margin: 16px 0;
+    .records-wrap {
+      margin: 16px 0;
+      .record-wrap{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin: 8px 0;
+        .record-content{
+          text-align: center;
+        }
+        .record-name{
+          width: 50%;
+        }
+        .record-level{
+          width: 10%;
+        }
+        .record-score{
+          width: 15%;
+        }
+        .record-date{
+          width: 20%;
+        }
+      }
+      .record-head{
+        border-bottom: 1px solid #fff;
+        padding-bottom: 8px;
+      }
+    }
+    .none{
+      text-align: center;
+    }
+  }
+}
+.comment{
+  margin: 16px 0;
+}

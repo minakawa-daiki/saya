@@ -1,3 +1,39 @@
+<div class="recent_update">
+  <h2 class="title">最近更新した譜面(SP)</h2>
+  <% if @new_record %>
+      <% @new_record.each_with_index do |record, i| %>
+          <div class="level-wrap">
+            <h3 class="humen-title">
+              <% if i == 0 %><span class="blue">Normal譜面</span><% end %>
+              <% if i == 1 %><span class="yellow">Hyper譜面</span><% end %>
+              <% if i == 2 %><span class="red">Another譜面</span><% end %>
+            </h3>
+            <div class="records-wrap">
+              <% if record.length != 0 %>
+                  <div class="record-wrap record-head">
+                    <p class="record-content record-name">曲名</p>
+                    <p class="record-content record-level">DJ LEVEL</p>
+                    <p class="record-content record-score title">スコア</p>
+                    <p class="record-content record-date">プレイ日時</p>
+                  </div>
+                  <% record.each do |k,v| %>
+                      <div class="record-wrap">
+                        <p class="record-content record-name"><%= k %></p>
+                        <p class="record-content record-level"><%=v[:level]%></p>
+                        <p class="record-content record-score"><%=v[:score]%> (＋<%= v[:diff] %>)</p>
+                        <p class="record-content record-date"><%= v[:date] %></p>
+                      </div>
+                  <% end %>
+              <% else %>
+                    <p class="none">最近更新した譜面はありません。</p>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
+</div>
+<p class="comment">※ここに表示されるのは直近２つのCSVを比較したデータです。</p>
+
 <%= form_tag upload_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag 'アップロード' %>
