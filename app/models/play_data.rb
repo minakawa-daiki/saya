@@ -1,6 +1,7 @@
 class PlayData
-  def self.upload(file)
-    open("user_data/#{file.original_filename}", 'wb') do |output|
+  def self.upload(file, user_id)
+    FileUtils.mkdir_p("user_data/#{user_id}")
+    open("user_data/#{user_id}/#{file.original_filename}", 'wb') do |output|
       open(file.path) do |data|
         output.write(data.read)
       end

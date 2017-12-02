@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   root 'login#login'
-  post 'upload', to: 'home#upload'
   get 'top', to: 'home#index'
   get 'show', to: 'home#show'
+
+  post 'upload', to: 'csv_manage#upload'
+  #get ''
 
 end
