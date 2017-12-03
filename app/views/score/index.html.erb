@@ -1,0 +1,73 @@
+<div class="recent_wrap">
+  <h1>最新スコア</h1>
+  <%= form_tag delete_path do %>
+      <%= submit_tag '検索', class: :search_btn %>
+  <% end %>
+  <% if @data %>
+      <div class="record-head record-wrap">
+        <div class="record-title">
+          <div class="version" id="version-header">
+            <p>バージョン</p>
+            <p class="sort-icon sort-icon-up"></p>
+            <%= render partial: 'component/version_boxes' %>
+          </div>
+          <div class="title" id="title-header">
+            <p>タイトル</p>
+          </div>
+          <p class="num">プレー回数</p>
+        </div>
+        <div class="record-by-level-wrap">
+          <div class="record-by-level">
+            <p class="element">レベル</p>
+            <p class="element">スコア</p>
+            <p class="element">ミスカウント</p>
+            <p class="element">クリアタイプ</p>
+            <p class="element">DJ LEVEL</p>
+          </div>
+        </div>
+        <div class="record-time">
+          <p class="element">最終プレー日時</p>
+        </div>
+      </div>
+      <div id="record-container">
+      <% @data.each do |record| %>
+          <div class="record-wrap record-content"
+               data-version="<%=record['﻿バージョン'] %>"
+               data-version-num="<%=version_num record['﻿バージョン'] %>"
+          >
+            <div class="record-title">
+              <p class="version"><%= record['﻿バージョン'] %></p>
+              <p class="title"><%= record['タイトル'] %></p>
+              <p class="num"><%= record['プレー回数'] %></p>
+            </div>
+            <div class="record-by-level-wrap">
+              <div class="record-by-level">
+                <p class="element">N(<%= record['NORMAL 難易度'] %>)</p>
+                <p class="element"><%= record['NORMAL EXスコア'] %></p>
+                <p class="element"><%= record['NORMAL ミスカウント'] %></p>
+                <p class="element"><%= record['NORMAL クリアタイプ'] %></p>
+                <p class="element"><%= record['NORMAL DJ LEVEL'] %></p>
+              </div>
+              <div class="record-by-level">
+                <p class="element">H(<%= record['HYPER 難易度'] %>)</p>
+                <p class="element"><%= record['HYPER EXスコア'] %></p>
+                <p class="element"><%= record['HYPER ミスカウント'] %></p>
+                <p class="element"><%= record['HYPER クリアタイプ'] %></p>
+                <p class="element"><%= record['HYPER DJ LEVEL'] %></p>
+              </div>
+              <div class="record-by-level">
+                <p class="element">A(<%= record['ANOTHER 難易度'] %>)</p>
+                <p class="element"><%= record['ANOTHER EXスコア'] %></p>
+                <p class="element"><%= record['ANOTHER ミスカウント'] %></p>
+                <p class="element"><%= record['ANOTHER クリアタイプ'] %></p>
+                <p class="element"><%= record['ANOTHER DJ LEVEL'] %></p>
+              </div>
+            </div>
+            <div class="record-time">
+              <p class="element"><%= record['最終プレー日時'] %></p>
+            </div>
+          </div>
+      <% end %>
+      </div>
+  <% end %>
+</div>

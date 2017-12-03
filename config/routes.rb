@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   post 'upload', to: 'csv_manage#upload'
   post 'delete', to: 'csv_manage#delete'
 
+  get 'recent', to: 'score#index'
+  post 'recent', to: 'score#search'
+
 end
