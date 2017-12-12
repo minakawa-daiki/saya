@@ -1,7 +1,12 @@
 .recent_wrap {
   text-align: center;
   .record-head {
-    cursor: pointer;
+    font-size: 0.8rem;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    .element{
+      cursor: pointer;
+    }
   }
   .record-wrap {
     border: 1px solid #FFF;
@@ -10,10 +15,12 @@
     justify-content: space-between;
     width: 100%;
     padding: 8px;
+    .element{
+      padding: 2px 0;
+    }
     .record-by-level-wrap {
       display: flex;
       flex-flow: column nowrap;
-      justify-content: space-between;
       .record-by-level {
         display: flex;
         flex-flow: row nowrap;
@@ -28,22 +35,31 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
+      padding: 12px;
       .version {
-        width: 25%;
+        width: 26%;
         position: relative;
       }
       .title {
-        width: 55%;
+        width: 56%;
         position: relative;
       }
       .num {
         width: 20%;
         position: relative;
       }
-      width: 40%;
+      width: 42%;
+      align-items: center;
+      #version-header{
+        position: relative;
+      }
     }
     .record-time {
-      width: 10%;
+      width: 8%;
+      &-content{
+        display: flex;
+        align-items: center;
+      }
     }
 
     .version:hover .version-search {
@@ -87,12 +103,13 @@
     }
   }
   .sort-icon {
-    height: 20px;
-    width: 20px;
-    display: block;
-    position: relative;
-    top: 8px;
+    height: 10px;
+    width: 10px;
+    top: 20px;
+    right: 0;
+    left: 0;
     margin: 0 auto;
+    position: absolute;
   }
 
   .sort-icon-up:after {
@@ -100,7 +117,7 @@
     height: 0;
     width: 0;
     display: block;
-    border: 10px transparent solid;
+    border: 5px transparent solid;
     border-top-width: 0;
     border-bottom-color: #FFF;
   }
@@ -110,7 +127,7 @@
     height: 0;
     width: 0;
     display: block;
-    border: 10px transparent solid;
+    border: 5px transparent solid;
     border-bottom-width: 0;
     border-top-color: #FFF;
     position: absolute;

@@ -50,4 +50,22 @@ module ApplicationHelper
       '24'
     end
   end
+
+
+  def create_clear_type(value)
+    return "<span class='c-ac'>#{remove_clear(value)}</span>" if value == 'ASSIST CLEAR'
+    return "<span class='c-ec'>#{remove_clear(value)}</span>" if value == 'EASY CLEAR'
+    return "<span class='c-nc'>#{remove_clear(value)}</span>" if value == 'CLEAR'
+    return "<span class='c-hc'>#{remove_clear(value)}</span>" if value == 'HARD CLEAR'
+    return "<span class='c-ehc'>#{remove_clear(value)}</span>" if value == 'EX HARD CLEAR'
+    "<span>#{remove_clear(value)}</span>"
+  end
+
+  private
+
+  def remove_clear(value)
+    return value if value == 'CLEAR'
+    value.gsub('CLEAR','')
+  end
 end
+

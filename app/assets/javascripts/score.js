@@ -1,4 +1,5 @@
 window.addEventListener('turbolinks:load', function() {
+  var sort_type = 'v';
   var sort_order = 'asc';
   var v_header = document.getElementById('version-header');
   if(v_header){
@@ -22,15 +23,16 @@ window.addEventListener('turbolinks:load', function() {
           })
           .forEach(function(v){ container.appendChild(v.dom); });
       var sort_icon = v_header.querySelector('.sort-icon');
-      if(sort_order === 'asc'){
-        sort_order = 'desc';
-        sort_icon.classList.remove("sort-icon-up");
-        sort_icon.classList.add("sort-icon-down");
-      }else{
+      if(sort_order === 'desc' && sort_type ==='v'){
         sort_order = 'asc';
         sort_icon.classList.remove("sort-icon-down");
         sort_icon.classList.add("sort-icon-up")
+      }else{
+        sort_order = 'desc';
+        sort_icon.classList.remove("sort-icon-up");
+        sort_icon.classList.add("sort-icon-down");
       }
+      sort_type = 'v';
     });
   }
 
