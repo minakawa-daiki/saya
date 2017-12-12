@@ -1,8 +1,8 @@
-<div class="">
-  <%= label_tag version, version_name %>
+<div class="version-search-item">
   <% if params[version] %>
       <%= check_box_tag version, version_name, true %>
   <% else %>
       <%= check_box_tag version, version_name %>
   <% end %>
+  <%= label_tag version, version_name %>
 </div>

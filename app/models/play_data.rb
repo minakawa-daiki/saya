@@ -11,11 +11,11 @@ class PlayData
   def self.find_by_user(id)
     data = []
     if id == 1
-      CSV.foreach("user_data/1/1244-0940_sp_score.csv", headers: true, quote_char: "\x00") do |row|
+      CSV.foreach("user_data/1/2017-12-03_1244-0940_sp_score.csv", headers: true, quote_char: "\x00") do |row|
         data.append(row.to_hash)
       end
     else
-      CSV.foreach("user_data/1/1244-0940_sp_score_2.csv", headers: true, quote_char: "\x00") do |row|
+      CSV.foreach("user_data/1/2017-12-04_1244-0940_sp_score.csv", headers: true, quote_char: "\x00") do |row|
         data.append(row.to_hash)
       end
     end

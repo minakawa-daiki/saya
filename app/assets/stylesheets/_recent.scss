@@ -1,6 +1,7 @@
 .recent_wrap {
   text-align: center;
   .record-head {
+    cursor: pointer;
   }
   .record-wrap {
     border: 1px solid #FFF;
@@ -8,6 +9,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 100%;
+    padding: 8px;
     .record-by-level-wrap {
       display: flex;
       flex-flow: column nowrap;
@@ -45,46 +47,52 @@
     }
 
     .version:hover .version-search {
-      //display: flex;
+      display: flex;
     }
     .version-search {
       color: #2E2F30;
       position: absolute;
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 330px;
+      padding: 16px;
+      border-radius: 4%;
       background-color: rgba(255, 255, 255, 0.9);
       z-index: 2;
       display: none;
       flex-flow: column wrap;
+      justify-content: space-between;
+      .version-search-item{
+        height: 25px;
+        width: 160px;
+        text-align: left;
+      }
     }
 
-    //.title:hover .title-search{
-    //  display: block;
-    //}
-    //.title-search{
-    //  color: #2E2F30;
-    //  position: absolute;
-    //  width: 300px;
-    //  height: 300px;
-    //  background-color: rgba(255,255,255,0.9);
-    //  z-index: 2;
-    //  display: none;
-    //  form{
-    //    height: 300px;
-    //    display: flex;
-    //    flex-flow: column wrap;
-    //  }
-    //}
+    .title:hover .title-search{
+      display: block;
+    }
+    .title-search{
+      color: #2E2F30;
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background-color: rgba(255,255,255,0.9);
+      z-index: 2;
+      display: none;
+      form{
+        height: 300px;
+        display: flex;
+        flex-flow: column wrap;
+      }
+    }
   }
   .sort-icon {
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
     display: block;
     position: relative;
-  }
-
-  .sort-icon-up {
-    height: 20px;
+    top: 8px;
+    margin: 0 auto;
   }
 
   .sort-icon-up:after {
@@ -92,9 +100,20 @@
     height: 0;
     width: 0;
     display: block;
-    border: 20px transparent solid;
+    border: 10px transparent solid;
     border-top-width: 0;
-    border-bottom-color: #333;
+    border-bottom-color: #FFF;
+  }
+
+  .sort-icon-down:before {
+    content: '';
+    height: 0;
+    width: 0;
+    display: block;
+    border: 10px transparent solid;
+    border-bottom-width: 0;
+    border-top-color: #FFF;
+    position: absolute;
   }
 }
 
