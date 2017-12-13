@@ -1,6 +1,8 @@
 window.addEventListener('turbolinks:load', function() {
   var sort_type = 'v';
   var sort_order = 'asc';
+
+  //versionソート
   var v_header = document.getElementById('version-header');
   if(v_header){
     v_header.addEventListener('click', function () {

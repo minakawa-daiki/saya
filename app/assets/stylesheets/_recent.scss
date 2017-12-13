@@ -1,19 +1,11 @@
 .recent_wrap {
   text-align: center;
-  .record-head {
-    font-size: 0.8rem;
-    border-top-right-radius: 16px;
-    border-top-left-radius: 16px;
-    .element{
-      cursor: pointer;
-    }
-  }
   .record-wrap {
     border: 1px solid #FFF;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    width: 100%;
+    width: calc(100% - 18px);
     padding: 8px;
     .element{
       padding: 2px 0;
@@ -35,7 +27,12 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
-      padding: 12px;
+      .click-area{
+        width: 100%;
+        height: 36px;
+        position: absolute;
+        top: 0;
+      }
       .version {
         width: 26%;
         position: relative;
@@ -43,6 +40,9 @@
       .title {
         width: 56%;
         position: relative;
+        .sort-icon{
+          display: none;
+        }
       }
       .num {
         width: 20%;
@@ -50,8 +50,8 @@
       }
       width: 42%;
       align-items: center;
-      #version-header{
-        position: relative;
+      .element{
+        padding: 12px 0;
       }
     }
     .record-time {
@@ -71,6 +71,7 @@
       width: 320px;
       height: 330px;
       padding: 16px;
+      margin-top: 16px;
       border-radius: 4%;
       background-color: rgba(255, 255, 255, 0.9);
       z-index: 2;
@@ -102,10 +103,23 @@
       }
     }
   }
+  .record-head {
+    font-size: 0.8rem;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    width: 1262px;
+    background-color: #101614;
+    .element{
+      cursor: pointer;
+    }
+  }
+  #record-container{
+    margin-top: 54px;
+  }
   .sort-icon {
     height: 10px;
     width: 10px;
-    top: 20px;
+    top: 30px;
     right: 0;
     left: 0;
     margin: 0 auto;
@@ -134,4 +148,9 @@
   }
 }
 
-
+.record-head-wrap{
+  background-color: #101614;
+  z-index: 2;
+  height: 54px;
+  position: absolute;
+}

@@ -4,30 +4,36 @@
       <%= submit_tag '検索', class: :search_btn %>
   <% end %>
   <% if @data %>
-      <div class="record-head record-wrap">
-        <div class="record-title">
-          <div class="version element" id="version-header">
-            <p>バージョン</p>
-            <%= render partial: 'component/version_boxes' %>
-            <p class="sort-icon sort-icon-up"></p>
+      <div class="record-head-wrap">
+        <div class=" record-wrap record-head">
+          <div class="record-title">
+            <div class="version element">
+              <p>バージョン</p>
+              <div class="click-area" id="version-header">
+                <p class="sort-icon sort-icon-up"></p>
+              </div>
+              <%= render partial: 'component/version_boxes' %>
+            </div>
+            <div class="title element">
+              <p>タイトル</p>
+              <div class="click-area" id="title-header">
+                <p class="sort-icon sort-icon-up"></p>
+              </div>
+            </div>
+            <p class="num element">プレー回数</p>
           </div>
-          <div class="title element" id="title-header">
-            <p>タイトル</p>
-            <p class="sort-icon sort-icon-up"></p>
+          <div class="record-by-level-wrap">
+            <div class="record-by-level">
+              <p class="element">レベル</p>
+              <p class="element">スコア</p>
+              <p class="element">ミスカウント</p>
+              <p class="element">クリアタイプ</p>
+              <p class="element">DJ LEVEL</p>
+            </div>
           </div>
-          <p class="num element">プレー回数</p>
-        </div>
-        <div class="record-by-level-wrap">
-          <div class="record-by-level">
-            <p class="element">レベル</p>
-            <p class="element">スコア</p>
-            <p class="element">ミスカウント</p>
-            <p class="element">クリアタイプ</p>
-            <p class="element">DJ LEVEL</p>
+          <div class="record-time">
+            <p class="element">最終プレー日時</p>
           </div>
-        </div>
-        <div class="record-time">
-          <p class="element">最終プレー日時</p>
         </div>
       </div>
       <div id="record-container">
