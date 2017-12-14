@@ -40,9 +40,6 @@
       .title {
         width: 56%;
         position: relative;
-        .sort-icon{
-          display: none;
-        }
       }
       .num {
         width: 20%;
@@ -111,6 +108,11 @@
     background-color: #101614;
     .element{
       cursor: pointer;
+    }
+    .title, .num{
+      .sort-icon{
+        display: none;
+      }
     }
   }
   #record-container{
