@@ -1,40 +1,25 @@
 window.addEventListener('turbolinks:load', function() {
-  var sort_type = 'v';
   var sort_order = 'asc';
-
   //versionソート
   var v_header = document.getElementById('version-header');
   if(v_header){
     v_header.addEventListener('click', function () {
-      var container = document.querySelector('#record-container');
-      [].slice.call(container.querySelectorAll('.record-content')).map(function(v){
+      headerClicked(v_header, sort_order, function(v){
         var value = v.dataset.versionNum;
         var title = v.querySelector('.title').innerHTML;
         return { dom: v, value: value, title: title };
-      })
-          .sort(function(a,b){
-            if(b.value === a.value){
-              var at = a.title.toString().toLowerCase();
-              var bt = b.title.toString().toLowerCase();
-              if(at < bt) { return - 1; }
-              else if(at > bt) { return 1; }
-              return 0;
-            }
-            if(sort_order === 'asc') { return b.value - a.value; }
-            return  a.value - b.value;
-          })
-          .forEach(function(v){ container.appendChild(v.dom); });
-      var sort_icon = v_header.querySelector('.sort-icon');
-      if(sort_order === 'desc' && sort_type ==='v'){
-        sort_order = 'asc';
-        sort_icon.classList.remove("sort-icon-down");
-        sort_icon.classList.add("sort-icon-up")
-      }else{
-        sort_order = 'desc';
-        sort_icon.classList.remove("sort-icon-up");
-        sort_icon.classList.add("sort-icon-down");
-      }
-      sort_type = 'v';
+      }, function(a,b){
+        if(b.value === a.value){
+          var at = a.title.toString().toLowerCase();
+          var bt = b.title.toString().toLowerCase();
+          if(at < bt) { return - 1; }
+          else if(at > bt) { return 1; }
+          return 0;
+        }
+        if(sort_order === 'asc') { return b.value - a.value; }
+        return  a.value - b.value;
+      });
+      if(sort_order === 'desc'){ sort_order = 'asc'; } else { sort_order = 'desc'; }
     });
   }
 
