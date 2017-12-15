@@ -1,0 +1,32 @@
+<div class="level-search">
+  <div class="level-search-item">
+    <%= check_box_tag 'l', 'ALL', true %>
+    <%= label_tag 'l', 'ALL' %>
+  </div>
+  <div class="level-search-item display-none">
+    <%= check_box_tag 'l0', '0', true %>
+    <%= label_tag 'l0', 'LEVEL0' %>
+  </div>
+  <% (1..12).each do |l| %>
+    <div class="level-search-item">
+      <%= check_box_tag "l#{l}", "#{l}", true %>
+      <%= label_tag "l#{l}", "LEVEL#{l}" %>
+    </div>
+  <% end %>
+
+  <div>
+    <p>ソート時に使用する<br />難易度</p>
+    <div class="level-radio-item">
+      <%= radio_button_tag 'sort_level', 'n', true %>
+      <%= label_tag 'sort_level_n', 'NORMAL' %>
+    </div>
+    <div class="level-radio-item">
+      <%= radio_button_tag 'sort_level', 'h', true %>
+      <%= label_tag 'sort_level_h', 'HYPER' %>
+    </div>
+    <div class="level-radio-item">
+      <%= radio_button_tag 'sort_level', 'a', true %>
+      <%= label_tag 'sort_level_a', 'ANOTHER' %>
+    </div>
+  </div>
+</div>

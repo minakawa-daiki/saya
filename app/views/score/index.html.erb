@@ -34,7 +34,7 @@
                 <div class="click-area" id="level-header">
                   <p class="sort-icon sort-icon-up"></p>
                 </div>
-                <%= render partial: 'component/level_boxes' %>
+                <%= render partial: 'component/level_box' %>
               </div>
               <p class="element">スコア</p>
               <p class="element">ミスカウント</p>
@@ -52,6 +52,9 @@
           <div class="record-wrap record-content"
                data-version="<%=record['﻿バージョン'] %>"
                data-version-num="<%=version_num record['﻿バージョン'] %>"
+               data-n-level="<%= record['NORMAL 難易度'] %>"
+               data-h-level="<%= record['HYPER 難易度'] %>"
+               data-a-level="<%= record['ANOTHER 難易度'] %>"
           >
             <div class="record-first-elm">
               <p class="version"><%= record['﻿バージョン'] %></p>
@@ -74,7 +77,7 @@
                 <p class="element"><%= record['HYPER DJ LEVEL'] %></p>
               </div>
               <div class="record-second-elm">
-                <p class="element"><span class="c-a">A</span>  (<%= record['ANOTHER 難易度'] %>)</p>
+                <p class="element level"><span class="c-a">A</span>  (<%= record['ANOTHER 難易度'] %>)</p>
                 <p class="element"><%= record['ANOTHER EXスコア'] %></p>
                 <p class="element"><%= record['ANOTHER ミスカウント'] %></p>
                 <p class="element"><%=(create_clear_type record['ANOTHER クリアタイプ']).html_safe  %></p>
