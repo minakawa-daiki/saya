@@ -3,6 +3,12 @@
   <%= form_tag delete_path do %>
       <%= submit_tag '検索', class: :search_btn %>
   <% end %>
+
+  <div class="element-count">
+    <p>全<span class="all">1000</span>件中 <span class="start">100</span>〜<span class="end">199</span>件目を表示</p>
+  </div>
+  <div class="pagination"></div>
+
   <% if @data %>
       <div class="record-head-wrap">
         <div class=" record-wrap record-head">
@@ -55,6 +61,7 @@
                data-n-level="<%= record['NORMAL 難易度'] %>"
                data-h-level="<%= record['HYPER 難易度'] %>"
                data-a-level="<%= record['ANOTHER 難易度'] %>"
+               data-enable="true"
           >
             <div class="record-first-elm">
               <p class="version"><%= record['﻿バージョン'] %></p>

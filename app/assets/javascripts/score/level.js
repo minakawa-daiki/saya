@@ -46,6 +46,7 @@ window.addEventListener('turbolinks:load', function() {
                 el[l].dataset.hLevel === e.target.value ||
                 el[l].dataset.aLevel === e.target.value) {
               el[l].style.display = 'flex';
+              el[l].dataset.enable = 'true';
             }
           }
         } else {
@@ -57,10 +58,12 @@ window.addEventListener('turbolinks:load', function() {
                   !ls[Number(el[m].dataset.hLevel)].checked &&
                   !ls[Number(el[m].dataset.aLevel)].checked ){
                 el[m].style.display = 'none';
+                el[m].dataset.enable = 'false';
               }
             }
           }
         }
+        updatePageWithCheck();
       });
     }
     l.addEventListener('change', function () {
@@ -75,6 +78,7 @@ window.addEventListener('turbolinks:load', function() {
           triggerEvent(ls[j], 'change');
         }
       }
+      updatePageWithCheck();
     });
 
     document.querySelectorAll('[name=sort_level]').forEach(function (t) {

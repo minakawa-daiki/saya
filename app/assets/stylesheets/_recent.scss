@@ -1,11 +1,11 @@
 .recent_wrap {
+  display: none;
   text-align: center;
   .record-wrap {
     border: 1px solid #FFF;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    width: calc(100% - 18px);
     padding: 8px;
     .element{
       padding: 2px 0;
@@ -100,7 +100,6 @@
     font-size: 0.8rem;
     border-top-right-radius: 16px;
     border-top-left-radius: 16px;
-    width: 1262px;
     background-color: #101614;
     .click-area{
       width: 100%;
@@ -120,7 +119,8 @@
     }
   }
   #record-container{
-    margin-top: 54px;
+    //TODO
+    margin-top: 80px;
   }
   .sort-icon {
     height: 10px;
@@ -155,6 +155,8 @@
 }
 
 .record-head-wrap{
+  width: 100%;
+  max-width: 1280px;
   background-color: #101614;
   z-index: 2;
   height: 54px;

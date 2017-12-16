@@ -37,15 +37,18 @@ window.addEventListener('turbolinks:load', function() {
           for(var l = 0; l < el.length; l++){
             if(el[l].dataset.version === e.target.value){
               el[l].style.display = 'flex';
+              el[l].dataset.enable = 'true';
             }
           }
         } else {
           for(var m = 0; m < el.length; m++){
             if(el[m].dataset.version === e.target.value){
               el[m].style.display = 'none';
+              el[m].dataset.enable = 'false';
             }
           }
         }
+        updatePageWithCheck();
       });
     }
     v.addEventListener('change', function () {
@@ -60,6 +63,7 @@ window.addEventListener('turbolinks:load', function() {
           triggerEvent(vs[j], 'change');
         }
       }
+      updatePageWithCheck();
     });
   }
 });
