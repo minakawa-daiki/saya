@@ -65,7 +65,7 @@ module ApplicationHelper
 
   def remove_clear(value)
     return value if value == 'CLEAR'
-    value.gsub('CLEAR','')
+    value.gsub(' CLEAR', '')
   end
 end
 
