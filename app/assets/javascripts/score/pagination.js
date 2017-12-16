@@ -22,7 +22,7 @@ function pageCreate(el, page_count, pagination_container){
     li.addEventListener('click', function (e) {
       var count = 0;
       el.forEach(function (t) {
-        if(t.dataset.enable === 'true'){ count++; }
+        if(t.dataset.enable === 'true' && t.dataset.searched === 'true'){ count++; }
       });
       updatePage(el, ( e.target.dataset.page - 1 ) * 100 + 1, count);
     });
