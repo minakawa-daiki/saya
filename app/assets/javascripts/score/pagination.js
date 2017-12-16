@@ -49,6 +49,7 @@ function updatePage(el, start, count) {
   var trueElm = [];
   el.forEach(function (val) {
     if(val.dataset.enable === 'true' && val.dataset.searched === 'true'){ trueElm.push(val); }
+    else { val.style.display = 'none'; }
   });
   trueElm.forEach(function (val, index) {
     if(start - 1 <= index && index < start + 99){

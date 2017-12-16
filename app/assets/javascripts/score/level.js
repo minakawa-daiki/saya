@@ -1,5 +1,4 @@
 window.addEventListener('turbolinks:load', function() {
-
   var sort_order = 'desc';
   var sort_level = 'a';
   //versionソート
@@ -45,7 +44,6 @@ window.addEventListener('turbolinks:load', function() {
             if (el[l].dataset.nLevel === e.target.value ||
                 el[l].dataset.hLevel === e.target.value ||
                 el[l].dataset.aLevel === e.target.value) {
-              el[l].style.display = 'flex';
               el[l].dataset.enable = 'true';
             }
           }
@@ -57,7 +55,6 @@ window.addEventListener('turbolinks:load', function() {
               if (!ls[Number(el[m].dataset.nLevel)].checked &&
                   !ls[Number(el[m].dataset.hLevel)].checked &&
                   !ls[Number(el[m].dataset.aLevel)].checked ){
-                el[m].style.display = 'none';
                 el[m].dataset.enable = 'false';
               }
             }
