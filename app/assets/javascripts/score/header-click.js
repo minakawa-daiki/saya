@@ -10,4 +10,5 @@ function headerClicked(element, sort_order, sortTargetCallback, sortCallback){
     container.appendChild(v.dom);
   });
   if(sort_order === 'desc'){ sortIconChange(element, 'asc'); }else{ sortIconChange(element, 'desc'); }
+  updatePageWithCheck()
 }
