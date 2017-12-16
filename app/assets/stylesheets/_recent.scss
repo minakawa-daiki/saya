@@ -22,6 +22,31 @@
         }
       }
       width: 50%;
+      .select-level-box{
+        color: #2E2F30;
+        position: absolute;
+        top: 20px;
+        width: 150px;
+        height: 100px;
+        padding: 16px;
+        margin-top: 16px;
+        border-radius: 4%;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 2;
+        display: none;
+        flex-flow: column wrap;
+        justify-content: space-between;
+      }
+
+      .score:hover .select-level-box {
+        display: flex;
+      }
+
+      .level-radio-item{
+        height: 25px;
+        width: 100px;
+        text-align: left;
+      }
 
       .level:hover .level-search {
         display: flex;
@@ -112,7 +137,7 @@
       padding: 12px 0;
       position: relative;
     }
-    .title, .num, .level{
+    .title, .num, .level, .score{
       .sort-icon{
         display: none;
       }

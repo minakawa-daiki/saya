@@ -1,0 +1,15 @@
+<div class="select-level-box">
+  <p>ソート時に使用する<br />難易度</p>
+  <div class="level-radio-item">
+    <%= radio_button_tag "#{type}_sort_level", 'n', true %>
+    <%= label_tag "#{type}_sort_level_n", 'NORMAL' %>
+  </div>
+  <div class="level-radio-item">
+    <%= radio_button_tag "#{type}_sort_level", 'h', true %>
+    <%= label_tag "#{type}_sort_level_h", 'HYPER' %>
+  </div>
+  <div class="level-radio-item">
+    <%= radio_button_tag "#{type}_sort_level", 'a', true %>
+    <%= label_tag "#{type}_sort_level_a", 'ANOTHER' %>
+  </div>
+</div>
