@@ -47,7 +47,9 @@ function updatePage(el, start, count) {
   }
 
   var trueElm = [];
-  el.forEach(function (val) { if(val.dataset.enable === 'true'){ trueElm.push(val); } });
+  el.forEach(function (val) {
+    if(val.dataset.enable === 'true' && val.dataset.searched === 'true'){ trueElm.push(val); }
+  });
   trueElm.forEach(function (val, index) {
     if(start - 1 <= index && index < start + 99){
       val.style.display = 'flex';
@@ -71,7 +73,7 @@ function updatePageWithCheck() {
   var el = document.querySelectorAll('.record-content');
   var count = 0;
   document.querySelectorAll('.record-content').forEach(function (t) {
-    if(t.dataset.enable === 'true'){ count++; }
+    if(t.dataset.enable === 'true' && t.dataset.searched === 'true'){ count++; }
   });
   updatePage(el, 1, count);
 }

@@ -1,8 +1,7 @@
 <div class="recent_wrap">
   <h1>最新スコア</h1>
-  <%= form_tag delete_path do %>
-      <%= submit_tag '検索', class: :search_btn %>
-  <% end %>
+
+  <%= text_field_tag 'element-search' %>
 
   <div class="element-count">
     <p>全<span class="all">1000</span>件中 <span class="start">100</span>〜<span class="end">199</span>件目を表示</p>
@@ -62,6 +61,8 @@
                data-h-level="<%= record['HYPER 難易度'] %>"
                data-a-level="<%= record['ANOTHER 難易度'] %>"
                data-enable="true"
+               data-title="<%= record['タイトル'] %>"
+               data-searched="false"
           >
             <div class="record-first-elm">
               <p class="version"><%= record['﻿バージョン'] %></p>
