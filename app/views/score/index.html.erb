@@ -71,8 +71,11 @@
               </div>
             </div>
           </div>
-          <div class="record-time">
-            <p class="element">最終プレー日時</p>
+          <div class="record-time element">
+            <p>最終プレー日時</p>
+            <div class="click-area" id="time-header">
+              <p class="sort-icon sort-icon-up"></p>
+            </div>
           </div>
         </div>
       </div>
@@ -117,7 +120,7 @@
               </div>
             </div>
             <div class="record-time record-time-content">
-              <p class="element"><%= record['最終プレー日時'] %></p>
+              <p class="element time"><%= record['最終プレー日時'] %></p>
             </div>
           </div>
       <% end %>
