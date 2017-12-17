@@ -48,21 +48,27 @@
                 </div>
                 <%= render partial: 'component/select_level_box', locals: {type: 'score'}%>
               </div>
-              <div class="score element">
+              <div class="miss element">
                 <p>ミスカウント</p>
                 <div class="click-area" id="miss-header">
                   <p class="sort-icon sort-icon-up"></p>
                 </div>
                 <%= render partial: 'component/select_level_box', locals: {type: 'miss'}%>
               </div>
-              <div class="score element">
+              <div class="clear element">
                 <p>クリアタイプ</p>
                 <div class="click-area" id="clear-header">
                   <p class="sort-icon sort-icon-up"></p>
                 </div>
                 <%= render partial: 'component/select_level_box', locals: {type: 'clear'}%>
               </div>
-              <p class="element">DJ LEVEL</p>
+              <div class="dj element">
+                <p>DJ LEVEL</p>
+                <div class="click-area" id="dj-header">
+                  <p class="sort-icon sort-icon-up"></p>
+                </div>
+                <%= render partial: 'component/select_level_box', locals: {type: 'dj'}%>
+              </div>
             </div>
           </div>
           <div class="record-time">
@@ -93,21 +99,21 @@
                 <p class="element n-score"><%= record['NORMAL EXスコア'] %></p>
                 <p class="element n-miss"><%= record['NORMAL ミスカウント'] %></p>
                 <p class="element n-clear"><%=(create_clear_type record['NORMAL クリアタイプ']).html_safe  %></p>
-                <p class="element"><%= record['NORMAL DJ LEVEL'] %></p>
+                <p class="element n-dj"><%= record['NORMAL DJ LEVEL'] %></p>
               </div>
               <div class="record-second-elm">
                 <p class="element"><span class="c-h">H</span>  (<%= record['HYPER 難易度'] %>)</p>
                 <p class="element h-score"><%= record['HYPER EXスコア'] %></p>
                 <p class="element h-miss"><%= record['HYPER ミスカウント'] %></p>
                 <p class="element h-clear"><%=(create_clear_type record['HYPER クリアタイプ']).html_safe  %></p>
-                <p class="element"><%= record['HYPER DJ LEVEL'] %></p>
+                <p class="element h-dj"><%= record['HYPER DJ LEVEL'] %></p>
               </div>
               <div class="record-second-elm">
                 <p class="element level"><span class="c-a">A</span>  (<%= record['ANOTHER 難易度'] %>)</p>
                 <p class="element a-score"><%= record['ANOTHER EXスコア'] %></p>
                 <p class="element a-miss"><%= record['ANOTHER ミスカウント'] %></p>
                 <p class="element a-clear"><%=(create_clear_type record['ANOTHER クリアタイプ']).html_safe  %></p>
-                <p class="element"><%= record['ANOTHER DJ LEVEL'] %></p>
+                <p class="element a-dj"><%= record['ANOTHER DJ LEVEL'] %></p>
               </div>
             </div>
             <div class="record-time record-time-content">

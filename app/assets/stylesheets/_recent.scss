@@ -38,7 +38,7 @@
         justify-content: space-between;
       }
 
-      .score:hover .select-level-box {
+      .element:hover .select-level-box {
         display: flex;
       }
 
@@ -137,7 +137,10 @@
       padding: 12px 0;
       position: relative;
     }
-    .title, .num, .level, .score{
+    //.element:hover{
+    //  background-color: red;
+    //}
+    .title, .num, .level, .score, .miss, .clear, .dj{
       .sort-icon{
         display: none;
       }
@@ -145,7 +148,7 @@
   }
   #record-container{
     //TODO
-    margin-top: 80px;
+    margin-top: 60px;
   }
   .sort-icon {
     height: 10px;
