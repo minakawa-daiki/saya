@@ -11,12 +11,27 @@
     justify-content: space-between;
     align-items: flex-end;
     .element-search-wrap{
+      height: 60px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
       margin-left: 16px;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       #element-search{
         width: 200px;
         height: 24px;
         padding:0 8px;
+        border-radius: 8px;
+      }
+      #csv{
+        padding:0 8px;
+        height: 24px;
+      }
+      .search-element{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
       }
     }
     .pagination{
@@ -176,7 +191,7 @@
   }
   #record-container{
     //TODO
-    margin-top: 54px;
+    margin-top: 61px;
     //.n-dj, .h-dj, .a-dj{
     //  color: rgb(80, 177, 170);
     //}

@@ -59,6 +59,7 @@ module ApplicationHelper
     return "<span class='c-nc'>#{remove_clear(value)}</span>" if value == 'CLEAR'
     return "<span class='c-hc'>#{remove_clear(value)}</span>" if value == 'HARD CLEAR'
     return "<span class='c-ehc'>#{remove_clear(value)}</span>" if value == 'EX HARD CLEAR'
+    return "<span class='c-fu'>#{remove_clear(value)}</span>" if value == 'FULLCOMBO CLEAR'
     "<span>#{remove_clear(value)}</span>"
   end
 

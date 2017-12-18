@@ -1,19 +1,18 @@
 class ScoreController < ApplicationController
   before_action :authenticate
   def index
-    #@data = PlayData.find_by_user(1).sort!{|a, b| a['タイトル'] <=> b['タイトル'] }
-    #@data = PlayData.find_by_user(1).sort!{|a, b| b['ANOTHER EXスコア'].to_i <=> a['ANOTHER EXスコア'].to_i }
-    # @data = PlayData.find_by_user(1).sort!{|a, b|
-    #   (b['ANOTHER 難易度'].to_i <=> a['ANOTHER 難易度'].to_i).nonzero? ||
-    #       a['タイトル'] <=> b['タイトル']
-    # }
-    #@data = filter_by_version(PlayData.find_by_user(1), 'SINOBUZ')
-    @data = PlayData.find_by_user(1)
+    p params[:csv].to_i
+    if params[:csv]
+      @data = PlayData.find_by_user(1, params[:csv].to_i)
+    else
+      @data = PlayData.find_by_user(1, 0)
+    end
+    @csvs = PlayData.find_csv_list(1)
     setting_params
   end
 
   def search
-    @data = PlayData.find_by_user(1)
+    @data = PlayData.find_by_user(1, 1)
     render 'index'
   end
 

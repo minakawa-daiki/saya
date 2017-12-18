@@ -2,9 +2,16 @@
   <h1>スコア一覧</h1>
 
   <div class="recent-header">
-    <p class="element-search-wrap">
-      <%= text_field_tag 'element-search', '', placeholder: 'タイトル' %>
-    </p>
+    <div class="element-search-wrap">
+      <p class="search-element">
+        <label for="csv">CSVファイルを選択：</label>
+        <%= select_tag 'csv', options_for_select(@csvs) %>
+      </p>
+      <p class="search-element">
+        <label for="element-search">検索：</label>
+        <%= text_field_tag 'element-search', '', placeholder: 'タイトル' %>
+      </p>
+    </div>
     <div class="page-wrap">
       <div class="element-count">
         <p>全<span class="all">1000</span>件中 <span class="start">100</span>〜<span class="end">199</span>件目を表示</p>

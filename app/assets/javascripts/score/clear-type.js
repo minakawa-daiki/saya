@@ -43,5 +43,6 @@ var clearType = {
   "EASY": 2,
   "CLEAR": 3,
   "HARD": 4,
-  "EX HARD": 5
+  "EX HARD": 5,
+  "FULLCOMBO": 6
 };
