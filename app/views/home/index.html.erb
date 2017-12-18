@@ -12,15 +12,19 @@
               <% if record.length != 0 %>
                   <div class="record-wrap record-head">
                     <p class="record-content record-name">曲名</p>
+                    <p class="record-content record-score">スコア</p>
+                    <p class="record-content record-miss">ミスカウント</p>
+                    <p class="record-content record-type">クリアタイプ</p>
                     <p class="record-content record-level">DJ LEVEL</p>
-                    <p class="record-content record-score title">スコア</p>
                     <p class="record-content record-date">プレイ日時</p>
                   </div>
                   <% record.each do |k,v| %>
                       <div class="record-wrap">
                         <p class="record-content record-name"><%= k %></p>
-                        <p class="record-content record-level"><%=v[:level]%></p>
                         <p class="record-content record-score"><%=v[:score]%> (＋<%= v[:diff] %>)</p>
+                        <p class="record-content record-miss"><%=v[:miss1]%> → <%=v[:miss2]%></p>
+                        <p class="record-content record-type"><%=(create_clear_type v[:type1]).html_safe  %> → <%=(create_clear_type v[:type2]).html_safe  %> </p>
+                        <p class="record-content record-level"><%=v[:level1]%> → <%=v[:level2]%></p>
                         <p class="record-content record-date"><%= v[:date] %></p>
                       </div>
                   <% end %>

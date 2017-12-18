@@ -41,7 +41,12 @@ class PlayData
             diff: record2['NORMAL EXスコア'].to_i - record1['NORMAL EXスコア'].to_i,
             date: record2['最終プレー日時'],
             score: record2['NORMAL EXスコア'],
-            level: record2['NORMAL DJ LEVEL']
+            level1: record1['NORMAL DJ LEVEL'],
+            level2: record2['NORMAL DJ LEVEL'],
+            miss1: record1['NORMAL ミスカウント'],
+            miss2: record2['NORMAL ミスカウント'],
+            type1: record1['NORMAL クリアタイプ'],
+            type2: record2['NORMAL クリアタイプ']
           }
         end
         if record1['HYPER EXスコア'].to_i < record2['HYPER EXスコア'].to_i
@@ -49,7 +54,12 @@ class PlayData
             diff: record2['HYPER EXスコア'].to_i - record1['HYPER EXスコア'].to_i,
             date: record2['最終プレー日時'],
             score: record2['HYPER EXスコア'],
-            level: record2['HYPER DJ LEVEL']
+            level1: record1['HYPER DJ LEVEL'],
+            level2: record2['HYPER DJ LEVEL'],
+            miss1: record1['HYPER ミスカウント'],
+            miss2: record2['HYPER ミスカウント'],
+            type1: record1['HYPER クリアタイプ'],
+            type2: record2['HYPER クリアタイプ']
           }
         end
         next unless record1['ANOTHER EXスコア'].to_i < record2['ANOTHER EXスコア'].to_i
@@ -57,7 +67,12 @@ class PlayData
           diff: record2['ANOTHER EXスコア'].to_i - record1['ANOTHER EXスコア'].to_i,
           date: record2['最終プレー日時'],
           score: record2['ANOTHER EXスコア'],
-          level: record2['ANOTHER DJ LEVEL']
+          level1: record1['ANOTHER DJ LEVEL'],
+          level2: record2['ANOTHER DJ LEVEL'],
+          miss1: record1['ANOTHER ミスカウント'],
+          miss2: record2['ANOTHER ミスカウント'],
+          type1: record1['ANOTHER クリアタイプ'],
+          type2: record2['ANOTHER クリアタイプ']
         }
       end
     end

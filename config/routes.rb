@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   root 'login#login'
   get 'top', to: 'home#index'
-  get 'show', to: 'home#show'
 
   get 'csv', to: 'csv_manage#index'
   post 'upload', to: 'csv_manage#upload'
