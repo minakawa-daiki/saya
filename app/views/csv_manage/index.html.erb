@@ -8,7 +8,7 @@
           <span class="name"><%=name %></span>
           <%= hidden_field_tag :file, name %>
             <!--TODO alert-->
-          <%= submit_tag '削除', class: :delete %>
+          <%= submit_tag '削除', class: :delete, data: { confirm: 'CSVファイルを削除してもよろしいですか?' } %>
       <% end %>
     <% end %>
   </div>
