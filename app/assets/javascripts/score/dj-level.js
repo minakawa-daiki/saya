@@ -24,8 +24,8 @@ window.addEventListener('turbolinks:load', function() {
           else if(at > bt) { return 1; }
           return 0;
         }
-        if(sort_order === 'asc') { return clearType[b.value] - clearType[a.value]; }
-        return  clearType[a.value] - clearType[b.value];
+        if(sort_order === 'asc') { return djLevel[b.value] - djLevel[a.value]; }
+        return  djLevel[a.value] - djLevel[b.value];
       });
       if(sort_order === 'desc'){ sort_order = 'asc'; } else { sort_order = 'desc'; }
     });
@@ -37,7 +37,7 @@ window.addEventListener('turbolinks:load', function() {
   });
 });
 
-var clearType = {
+var djLevel = {
   "F": 0,
   "E": 1,
   "D": 2,
