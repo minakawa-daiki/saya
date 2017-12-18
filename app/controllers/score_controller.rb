@@ -1,19 +1,13 @@
 class ScoreController < ApplicationController
   before_action :authenticate
   def index
-    p params[:csv].to_i
     if params[:csv]
-      @data = PlayData.find_by_user(1, params[:csv].to_i)
+      @data = PlayData.find_by_user(current_user.id, params[:csv].to_i)
     else
-      @data = PlayData.find_by_user(1, 0)
+      @data = PlayData.find_by_user(current_user.id, 0)
     end
     @csvs = PlayData.find_csv_list(1)
     setting_params
-  end
-
-  def search
-    @data = PlayData.find_by_user(1, 1)
-    render 'index'
   end
 
   private
