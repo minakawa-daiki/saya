@@ -53,6 +53,7 @@ module ApplicationHelper
 
 
   def create_clear_type(value)
+    return "<span class='c-fa'>#{remove_clear(value)}</span>" if value == 'FAILED'
     return "<span class='c-ac'>#{remove_clear(value)}</span>" if value == 'ASSIST CLEAR'
     return "<span class='c-ec'>#{remove_clear(value)}</span>" if value == 'EASY CLEAR'
     return "<span class='c-nc'>#{remove_clear(value)}</span>" if value == 'CLEAR'

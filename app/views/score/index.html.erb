@@ -1,12 +1,17 @@
-<div class="recent_wrap">
-  <h1>最新スコア</h1>
+<div class="recent-wrap">
+  <h1>スコア一覧</h1>
 
-  <%= text_field_tag 'element-search' %>
-
-  <div class="element-count">
-    <p>全<span class="all">1000</span>件中 <span class="start">100</span>〜<span class="end">199</span>件目を表示</p>
+  <div class="recent-header">
+    <p class="element-search-wrap">
+      <%= text_field_tag 'element-search', '', placeholder: 'タイトル' %>
+    </p>
+    <div class="page-wrap">
+      <div class="element-count">
+        <p>全<span class="all">1000</span>件中 <span class="start">100</span>〜<span class="end">199</span>件目を表示</p>
+      </div>
+      <div class="pagination"></div>
+    </div>
   </div>
-  <div class="pagination"></div>
 
   <% if @data %>
       <div class="record-head-wrap">
@@ -72,7 +77,7 @@
             </div>
           </div>
           <div class="record-time element">
-            <p>最終プレー日時</p>
+            <p>プレー日時</p>
             <div class="click-area" id="time-header">
               <p class="sort-icon sort-icon-up"></p>
             </div>

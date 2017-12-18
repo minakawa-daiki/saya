@@ -1,5 +1,5 @@
 window.addEventListener('turbolinks:load', function() {
-  if(document.querySelector('.recent_wrap')){
-    document.querySelector('.recent_wrap').style.display = 'block';
+  if(document.querySelector('.recent-wrap')){
+    document.querySelector('.recent-wrap').style.display = 'block';
   }
 });

@@ -1,6 +1,28 @@
-.recent_wrap {
+.recent-wrap {
+  line-height: 1.2rem;
   display: none;
   text-align: center;
+  h1{
+    font-size: 1.5rem;
+  }
+  .recent-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    .element-search-wrap{
+      margin-left: 16px;
+      margin-bottom: 10px;
+      #element-search{
+        width: 200px;
+        height: 24px;
+        padding:0 8px;
+      }
+    }
+    .pagination{
+      height: 42px;
+    }
+  }
   .record-wrap {
     border: 1px solid #FFF;
     display: flex;
@@ -27,7 +49,7 @@
         position: absolute;
         top: 20px;
         width: 150px;
-        height: 100px;
+        height: 120px;
         padding: 16px;
         margin-top: 16px;
         border-radius: 4%;
@@ -36,6 +58,9 @@
         display: none;
         flex-flow: column wrap;
         justify-content: space-between;
+        &-title{
+          margin-bottom: 4px;
+        }
       }
 
       .element:hover .select-level-box {
@@ -119,6 +144,9 @@
         width: 160px;
         text-align: left;
       }
+      &-title{
+        margin-bottom: 4px;
+      }
     }
   }
   .record-head {
@@ -148,7 +176,10 @@
   }
   #record-container{
     //TODO
-    margin-top: 60px;
+    margin-top: 54px;
+    //.n-dj, .h-dj, .a-dj{
+    //  color: rgb(80, 177, 170);
+    //}
   }
   .sort-icon {
     height: 10px;
