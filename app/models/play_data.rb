@@ -11,10 +11,14 @@ class PlayData
   def self.find_by_user(user_id, csv_id)
     data = []
     csv_list = Dir.glob("user_data/#{user_id}/*").reverse
-    CSV.foreach(csv_list[csv_id], headers: true, quote_char: "\x00") do |row|
-      data.append(row.to_hash)
+    begin
+      CSV.foreach(csv_list[csv_id], headers: true, quote_char: "\x00") do |row|
+        data.append(row.to_hash)
+      end
+      data
+    rescue
+      data
     end
-    data
   end
 
   def self.find_csv_list(user_id)
