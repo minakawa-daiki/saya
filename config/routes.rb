@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post 'delete', to: 'csv_manage#delete'
 
   get 'recent', to: 'score#index'
+  get 'compare', to: 'score#compare'
 
 end

@@ -1,5 +1,15 @@
 <div class="compare-wrap">
-  <h2 class="title">最近更新した譜面</h2>
+  <h2 class="title">スコア比較</h2>
+  <div class="element-search-wrap">
+    <p class="search-element">
+      <label for="compare_csv1">1つ目のCSVファイルを選択：</label>
+      <%= select_tag 'compare_csv1', options_for_select(@csvs) %>
+    </p>
+    <p class="search-element">
+      <label for="compare_csv2">2つ目のCSVファイルを選択：</label>
+      <%= select_tag 'compare_csv2', options_for_select(@csvs) %>
+    </p>
+  </div>
   <div class="recent_update">
     <% if @new_record %>
         <% @new_record.each_with_index do |record, i| %>
@@ -30,13 +40,11 @@
                         </div>
                     <% end %>
                 <% else %>
-                      <p class="none">最近更新した譜面はありません。</p>
+                    <p class="none">更新した譜面はありません。</p>
                 <% end %>
               </div>
             </div>
         <% end %>
     <% end %>
   </div>
-  <p class="comment">※ここに表示されるのは直近２つのCSVを比較したデータです。</p>
-  <%= render partial: 'component/csv_update' ,locals: { referrer: 'top' }%>
 </div>

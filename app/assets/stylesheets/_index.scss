@@ -21,21 +21,22 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+        align-items: center;
         margin: 8px 0;
         .record-content{
           text-align: center;
         }
         .record-name{
-          width: 40%;
+          width: 36%;
         }
         .record-score{
-          width: 10%;
+          width: 12%;
         }
         .record-miss{
-          width: 10%;
+          width: 12%;
         }
         .record-type{
-          width: 20%;
+          width: 18%;
         }
         .record-level{
           width: 10%;
