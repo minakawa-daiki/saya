@@ -1,7 +1,6 @@
 class ScoreController < ApplicationController
   before_action :authenticate
   def index
-    # TODO: 文字列例外
     @data = if params[:csv]
               PlayData.find_by_user(current_user.id, params[:csv].to_i)
             else
@@ -16,7 +15,7 @@ class ScoreController < ApplicationController
       data1 = PlayData.find_by_user(current_user.id, params[:csv2].to_i)
       data2 = PlayData.find_by_user(current_user.id, params[:csv1].to_i)
     else
-      data1 = PlayData.find_by_user(current_user.id, 3)
+      data1 = PlayData.find_by_user(current_user.id, 1)
       data2 = PlayData.find_by_user(current_user.id, 0)
     end
     @new_record = PlayData.find_by_update_score(data1, data2)
