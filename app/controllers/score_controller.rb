@@ -6,7 +6,7 @@ class ScoreController < ApplicationController
             else
               PlayData.find_by_user(current_user.id, 0)
             end
-    @csvs = PlayData.find_csv_list(1)
+    @csvs = PlayData.find_csv_list(current_user.id)
     setting_params
   end
 
@@ -19,7 +19,7 @@ class ScoreController < ApplicationController
       data2 = PlayData.find_by_user(current_user.id, 0)
     end
     @new_record = PlayData.find_by_update_score(data1, data2)
-    @csvs = PlayData.find_csv_list(1)
+    @csvs = PlayData.find_csv_list(current_user.id)
   end
 
   private
