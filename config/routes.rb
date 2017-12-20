@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   get 'recent', to: 'score#index'
   get 'compare', to: 'score#compare'
 
+  get 'sample', to: 'sample#index'
+  get 'sample/compare', to: 'sample#compare'
+
 end

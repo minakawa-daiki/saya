@@ -1,0 +1,145 @@
+<div class="recent-wrap">
+  <h1>スコア一覧</h1>
+
+  <div class="recent-header">
+    <div class="element-search-wrap">
+      <p class="search-element">
+        <label for="csv">CSVファイルを選択：</label>
+        <%= select_tag 'csv', options_for_select(@csvs) %>
+      </p>
+      <p class="search-element">
+        <label for="element-search">検索：</label>
+        <%= text_field_tag 'element-search', '', placeholder: 'タイトル' %>
+      </p>
+    </div>
+    <div class="page-wrap">
+      <div class="element-count">
+        <p>全<span class="all">1000</span>件中 <span class="start">100</span>〜<span class="end">199</span>件目を表示</p>
+      </div>
+      <div class="pagination"></div>
+    </div>
+  </div>
+
+  <% if @data && @data.length > 0 %>
+      <div class="record-head-wrap">
+        <div class=" record-wrap record-head">
+          <div class="record-first-elm">
+            <div class="version element">
+              <p>バージョン</p>
+              <div class="click-area" id="version-header">
+                <p class="sort-icon sort-icon-up"></p>
+              </div>
+              <%= render partial: 'component/version_box' %>
+            </div>
+            <div class="title element">
+              <p>タイトル</p>
+              <div class="click-area" id="title-header">
+                <p class="sort-icon sort-icon-up"></p>
+              </div>
+            </div>
+            <div class="num element">
+              <p>プレー回数</p>
+              <div class="click-area" id="num-header">
+                <p class="sort-icon sort-icon-up"></p>
+              </div>
+            </div>
+          </div>
+          <div class="record-second-elm-wrap">
+            <div class="record-second-elm">
+              <div class="level element">
+                <p>レベル</p>
+                <div class="click-area" id="level-header">
+                  <p class="sort-icon sort-icon-up"></p>
+                </div>
+                <%= render partial: 'component/level_box' %>
+              </div>
+              <div class="score element">
+                <p>スコア</p>
+                <div class="click-area" id="score-header">
+                  <p class="sort-icon sort-icon-up"></p>
+                </div>
+                <%= render partial: 'component/select_level_box', locals: {type: 'score'}%>
+              </div>
+              <div class="miss element">
+                <p>ミスカウント</p>
+                <div class="click-area" id="miss-header">
+                  <p class="sort-icon sort-icon-up"></p>
+                </div>
+                <%= render partial: 'component/select_level_box', locals: {type: 'miss'}%>
+              </div>
+              <div class="clear element">
+                <p>クリアタイプ</p>
+                <div class="click-area" id="clear-header">
+                  <p class="sort-icon sort-icon-up"></p>
+                </div>
+                <%= render partial: 'component/select_level_box', locals: {type: 'clear'}%>
+              </div>
+              <div class="dj element">
+                <p>DJ LEVEL</p>
+                <div class="click-area" id="dj-header">
+                  <p class="sort-icon sort-icon-up"></p>
+                </div>
+                <%= render partial: 'component/select_level_box', locals: {type: 'dj'}%>
+              </div>
+            </div>
+          </div>
+          <div class="record-time element">
+            <p>プレー日時</p>
+            <div class="click-area" id="time-header">
+              <p class="sort-icon sort-icon-up"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="record-container">
+      <% @data.each do |record| %>
+          <div class="record-wrap record-content"
+               data-version="<%=record['﻿バージョン'] %>"
+               data-version-num="<%=version_num record['﻿バージョン'] %>"
+               data-n-level="<%= record['NORMAL 難易度'] %>"
+               data-h-level="<%= record['HYPER 難易度'] %>"
+               data-a-level="<%= record['ANOTHER 難易度'] %>"
+               data-enable="true"
+               data-title="<%= record['タイトル'] %>"
+               data-searched="true"
+          >
+            <div class="record-first-elm">
+              <p class="version"><%= record['﻿バージョン'] %></p>
+              <p class="title"><%= record['タイトル'] %></p>
+              <p class="num"><%= record['プレー回数'] %></p>
+            </div>
+            <div class="record-second-elm-wrap">
+              <div class="record-second-elm">
+                <p class="element"><span class="c-n">N</span>  (<%= record['NORMAL 難易度'] %>)</p>
+                <p class="element n-score"><%= record['NORMAL EXスコア'] %></p>
+                <p class="element n-miss"><%= record['NORMAL ミスカウント'] %></p>
+                <p class="element n-clear"><%=(create_clear_type record['NORMAL クリアタイプ']).html_safe  %></p>
+                <p class="element n-dj"><%= record['NORMAL DJ LEVEL'] %></p>
+              </div>
+              <div class="record-second-elm">
+                <p class="element"><span class="c-h">H</span>  (<%= record['HYPER 難易度'] %>)</p>
+                <p class="element h-score"><%= record['HYPER EXスコア'] %></p>
+                <p class="element h-miss"><%= record['HYPER ミスカウント'] %></p>
+                <p class="element h-clear"><%=(create_clear_type record['HYPER クリアタイプ']).html_safe  %></p>
+                <p class="element h-dj"><%= record['HYPER DJ LEVEL'] %></p>
+              </div>
+              <div class="record-second-elm">
+                <p class="element level"><span class="c-a">A</span>  (<%= record['ANOTHER 難易度'] %>)</p>
+                <p class="element a-score"><%= record['ANOTHER EXスコア'] %></p>
+                <p class="element a-miss"><%= record['ANOTHER ミスカウント'] %></p>
+                <p class="element a-clear"><%=(create_clear_type record['ANOTHER クリアタイプ']).html_safe  %></p>
+                <p class="element a-dj"><%= record['ANOTHER DJ LEVEL'] %></p>
+              </div>
+            </div>
+            <div class="record-time record-time-content">
+              <p class="element time"><%= record['最終プレー日時'] %></p>
+            </div>
+          </div>
+      <% end %>
+      </div>
+  <% else %>
+    <div class="no-score">
+      <p>スコアが存在しません。</p>
+    </div>
+  <% end %>
+</div>

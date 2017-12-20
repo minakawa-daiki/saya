@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IIDX スコアマネージャ(Saya)</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to 'トップ', root_path %></li>
+        <li><%= link_to 'スコア一覧', sample_path %></li>
+        <li><%= link_to 'スコア比較', sample_compare_path %></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="content">
+    <%= yield %>
+  </div>
+  <div class="footer">
+    <p>Copyright © 2017 Daiki Minakawa All Rights Reserved.</p>
+  </div>
+</div>
+</body>
+</html>

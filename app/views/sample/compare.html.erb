@@ -1,0 +1,50 @@
+<div class="compare-wrap">
+  <h2 class="title">スコア比較</h2>
+  <div class="element-search-wrap">
+    <p class="search-element">
+      <label for="compare_csv1">1つ目のCSVファイルを選択：</label>
+      <%= select_tag 'compare_csv1', options_for_select(@csvs) %>
+    </p>
+    <p class="search-element">
+      <label for="compare_csv2">2つ目のCSVファイルを選択：</label>
+      <%= select_tag 'compare_csv2', options_for_select(@csvs) %>
+    </p>
+  </div>
+  <div class="recent_update">
+    <% if @new_record %>
+        <% @new_record.each_with_index do |record, i| %>
+            <div class="level-wrap">
+              <h3 class="humen-title">
+                <% if i == 0 %><span class="c-n">Normal譜面</span><% end %>
+                <% if i == 1 %><span class="c-h">Hyper譜面</span><% end %>
+                <% if i == 2 %><span class="c-a">Another譜面</span><% end %>
+              </h3>
+              <div class="records-wrap">
+                <% if record.length != 0 %>
+                    <div class="record-wrap record-head">
+                      <p class="record-content record-name">曲名</p>
+                      <p class="record-content record-score">スコア</p>
+                      <p class="record-content record-miss">ミスカウント</p>
+                      <p class="record-content record-type">クリアタイプ</p>
+                      <p class="record-content record-level">DJ LEVEL</p>
+                      <p class="record-content record-date">プレイ日時</p>
+                    </div>
+                    <% record.each do |k,v| %>
+                        <div class="record-wrap">
+                          <p class="record-content record-name"><%= k %></p>
+                          <p class="record-content record-score"><%=v[:score]%> (＋<%= v[:diff] %>)</p>
+                          <p class="record-content record-miss"><%=v[:miss1]%> → <%=v[:miss2]%></p>
+                          <p class="record-content record-type"><%=(create_clear_type v[:type1]).html_safe  %> → <%=(create_clear_type v[:type2]).html_safe  %> </p>
+                          <p class="record-content record-level"><%=v[:level1]%> → <%=v[:level2]%></p>
+                          <p class="record-content record-date"><%= v[:date] %></p>
+                        </div>
+                    <% end %>
+                <% else %>
+                    <p class="none">更新した譜面はありません。</p>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>
