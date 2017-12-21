@@ -11,7 +11,7 @@ window.addEventListener('turbolinks:load', function() {
     file_select.addEventListener('change', function () {
       if(!(file_select.value)) return;
       var file = file_select.files[0];
-      if(file.size > 300000){
+      if(file.size > 500000){
         alert('ファイルサイズが許可された制限を超過しています');
         return
       }

@@ -8,7 +8,7 @@ class CsvManageController < ApplicationController
   end
 
   def upload
-    if File.size(params[:file].path) < 300_000 && File.extname(params[:file].path) == '.csv'
+    if File.size(params[:file].path) < 500_000 && File.extname(params[:file].path) == '.csv'
       CSV.read(params[:file].path, headers: true, quote_char: "\x00")
       if Dir.glob("user_data/#{current_user.id}/*").index { |file| file.match(/#{Date.today}/) }
         if params[:referrer] == 'top'
