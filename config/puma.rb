@@ -1,4 +1,4 @@
-if Rails.env.production?
+if ENV['RAILS_ENV'] == 'production'
   proj_path = "#{File.expand_path("../..", __FILE__)}"
   proj_name = File.basename(proj_path)
   home = ENV.fetch("HOME") { "/home/saya" }
