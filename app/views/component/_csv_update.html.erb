@@ -1,8 +1,7 @@
 <div class="csv-upload-wrapper">
   <h2>CSVファイルをアップロードする</h2>
   <%= form_tag upload_path, multipart: true do %>
-      <!--<%= file_field_tag :file , class: :file_select, accept:'.csv' %>-->
-      <%= file_field_tag :file , class: :file_select %>
+      <%= file_field_tag :file , class: :file_select, accept:'.csv' %>
       <button class="file_select_btn" type="button">ファイルを選択</button>
       <span class="icon">未選択</span>
       <span class="filename"></span>
