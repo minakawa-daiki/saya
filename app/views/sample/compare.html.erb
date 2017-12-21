@@ -2,13 +2,12 @@
   <h2 class="title">スコア比較</h2>
   <div class="element-search-wrap">
     <p class="search-element">
-      <label for="compare_csv1">1つ目のCSVファイルを選択：</label>
-      <!--TODO-->
-      <%= select_tag 'compare_csv1', options_for_select(@csvs) %>
+      <label for="sample_compare_csv1">1つ目のCSVファイルを選択：</label>
+      <%= select_tag 'sample_compare_csv1', options_for_select(@csvs) %>
     </p>
     <p class="search-element">
-      <label for="compare_csv2">2つ目のCSVファイルを選択：</label>
-      <%= select_tag 'compare_csv2', options_for_select(@csvs) %>
+      <label for="sample_compare_csv2">2つ目のCSVファイルを選択：</label>
+      <%= select_tag 'sample_compare_csv2', options_for_select(@csvs) %>
     </p>
   </div>
   <div class="recent_update">
