@@ -27,7 +27,7 @@ window.addEventListener('turbolinks:load', function() {
   if(v){
     var el = document.getElementsByClassName('record-content');
     var vs = [];
-    for(var i = 1; i < 25; i++){
+    for(var i = 1; i < 26; i++){
       vs.push(document.getElementById('v' + i));
     }
 

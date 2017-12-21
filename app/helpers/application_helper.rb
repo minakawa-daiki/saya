@@ -48,6 +48,8 @@ module ApplicationHelper
       '23'
     elsif value == 'SINOBUZ'
       '24'
+    elsif value == 'CANNON BALLERS'
+      '25'
     end
   end
 
