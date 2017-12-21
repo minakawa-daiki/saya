@@ -1,10 +1,13 @@
-proj_path = "#{File.expand_path("../..", __FILE__)}"
-proj_name = File.basename(proj_path)
-home = ENV.fetch("HOME") { "/home/saya" }
+if Rails.env.production?
+  proj_path = "#{File.expand_path("../..", __FILE__)}"
+  proj_name = File.basename(proj_path)
+  home = ENV.fetch("HOME") { "/home/saya" }
 
-pidfile "#{home}/run/#{proj_name}.pid"
-bind "unix://#{home}/run/#{proj_name}.sock"
-directory proj_path
+  pidfile "#{home}/run/#{proj_name}.pid"
+  bind "unix://#{home}/run/#{proj_name}.sock"
+  directory proj_path
+end
+
 
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers: a minimum and maximum.
